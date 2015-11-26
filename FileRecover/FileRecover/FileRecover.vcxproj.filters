@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="主文件">
+      <UniqueIdentifier>{6bdd60a0-217c-4c38-82f4-7ddab32b39b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="扇区类">
+      <UniqueIdentifier>{53a5ffcd-735e-4ce9-8514-b9ba221cd348}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drive类">
+      <UniqueIdentifier>{1052b998-9c58-4016-9b2a-5fcb9accf48d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\FileRecover.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\FileRecover.ico">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileRecover.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FileRecoverDlg.h">
+      <Filter>主文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>主文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Sector.h">
+      <Filter>扇区类</Filter>
+    </ClInclude>
+    <ClInclude Include="Drive.h">
+      <Filter>Drive类</Filter>
+    </ClInclude>
+    <ClInclude Include="NTFSDrive.h">
+      <Filter>Drive类</Filter>
+    </ClInclude>
+    <ClInclude Include="FAT32Drive.h">
+      <Filter>Drive类</Filter>
+    </ClInclude>
+    <ClInclude Include="MFTRecord.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FileRecover.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyList.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FileRecoverDlg.cpp">
+      <Filter>主文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Sector.cpp">
+      <Filter>扇区类</Filter>
+    </ClCompile>
+    <ClCompile Include="Drive.cpp">
+      <Filter>Drive类</Filter>
+    </ClCompile>
+    <ClCompile Include="NTFSDrive.cpp">
+      <Filter>Drive类</Filter>
+    </ClCompile>
+    <ClCompile Include="FAT32Drive.cpp">
+      <Filter>Drive类</Filter>
+    </ClCompile>
+    <ClCompile Include="MFTRecord.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="FileRecover.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
