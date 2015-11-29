@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "My_Symbols", "My_Symbols\My_Symbols.vcxproj", "{B9EFB2CA-61F2-41F6-9754-72F6AA6FABE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|WIN64 = Debug|WIN64
+		Release|WIN64 = Release|WIN64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9EFB2CA-61F2-41F6-9754-72F6AA6FABE0}.Debug|WIN64.ActiveCfg = Debug|x64
+		{B9EFB2CA-61F2-41F6-9754-72F6AA6FABE0}.Debug|WIN64.Build.0 = Debug|x64
+		{B9EFB2CA-61F2-41F6-9754-72F6AA6FABE0}.Release|WIN64.ActiveCfg = Release|x64
+		{B9EFB2CA-61F2-41F6-9754-72F6AA6FABE0}.Release|WIN64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

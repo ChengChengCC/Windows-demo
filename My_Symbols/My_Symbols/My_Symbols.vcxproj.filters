@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ini配置">
+      <UniqueIdentifier>{b7117bab-7944-4acd-a4e5-dbd96aadbba8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ModuleList">
+      <UniqueIdentifier>{da3212a1-ed9e-4440-a84a-4a7579c4a869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Symbols">
+      <UniqueIdentifier>{9a37d36c-abd7-4d0f-a09a-1f3f5ebd59c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SymbolListDlg">
+      <UniqueIdentifier>{6b38c916-71ad-4260-8283-dae4a9a004d0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\My_Symbols.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\My_Symbols.ico">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="My_Symbols.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="My_SymbolsDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IniFile.h">
+      <Filter>ini配置</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleList.h">
+      <Filter>ModuleList</Filter>
+    </ClInclude>
+    <ClInclude Include="Symbols.h">
+      <Filter>Symbols</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolsDlg.h">
+      <Filter>SymbolListDlg</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="My_Symbols.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="My_SymbolsDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IniFile.cpp">
+      <Filter>ini配置</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleList.cpp">
+      <Filter>ModuleList</Filter>
+    </ClCompile>
+    <ClCompile Include="Symbols.cpp">
+      <Filter>Symbols</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolsDlg.cpp">
+      <Filter>SymbolListDlg</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="My_Symbols.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
