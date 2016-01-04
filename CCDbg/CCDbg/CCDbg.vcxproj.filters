@@ -19,7 +19,7 @@
     <Filter Include="Common">
       <UniqueIdentifier>{8a583fc2-08bc-431a-8869-e4103983e251}</UniqueIdentifier>
     </Filter>
-    <Filter Include="StuCode">
+    <Filter Include="CCCode">
       <UniqueIdentifier>{1f4b4a89-65d6-4186-8676-a6059fb04026}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -45,8 +45,8 @@
     <ClInclude Include="disasm.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="StuCode.h">
-      <Filter>StuCode</Filter>
+    <ClInclude Include="CCCode.h">
+      <Filter>CCCode</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -80,8 +80,17 @@
     <ClCompile Include="disasm.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="StuCode.cpp">
-      <Filter>StuCode</Filter>
+    <ClCompile Include="MemPoint.cpp">
+      <Filter>HandleException</Filter>
+    </ClCompile>
+    <ClCompile Include="CCCode.cpp">
+      <Filter>CCCode</Filter>
+    </ClCompile>
+    <ClCompile Include="HardPoint.cpp">
+      <Filter>HandleException</Filter>
+    </ClCompile>
+    <ClCompile Include="OrdPoint.cpp">
+      <Filter>HandleException</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

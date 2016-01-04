@@ -48,7 +48,7 @@ LPVOID HexStringToHex(char* pHexString, BOOL isShowError)
 
 
 //œ‘ æ∞Ô÷˙
-BOOL ShowHelp(StuCommand* pCmd)
+BOOL ShowHelp(CCCommand* pCmd)
 {
 	printf("   ============================ help menu ===========================---=====\n");
 	printf("   **************************************************************************\n");

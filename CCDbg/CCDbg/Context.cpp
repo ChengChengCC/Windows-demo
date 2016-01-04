@@ -4,7 +4,7 @@
 
 
 
-//将线程信息更新到 M_Context 变量中
+//将线程的context信息更新到 m_Context 变量中
 BOOL CHandleException::UpdateContextFromThread()
 {
 	BOOL bRet = TRUE;
@@ -20,7 +20,7 @@ BOOL CHandleException::UpdateContextFromThread()
 
 
 
-//将 M_Context 中的环境更新到线程中
+//将 m_context中的context信息更新到线程中
 BOOL CHandleException::UpdateContextToThread()
 {
 	BOOL bRet = TRUE;

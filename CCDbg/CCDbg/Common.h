@@ -12,7 +12,7 @@ using namespace std;
 {str, memberFxn},
 
 
-struct StuCommand
+struct CCCommand
 {
 	char chCmd[FIELD_LEN];
 	char chParam1[FIELD_LEN];
@@ -39,17 +39,17 @@ enum PointAccess
 };
 
 //内存断点对应内存分页结构体
-struct stuPointPage
+struct CCPointPage
 {
 	int         nPtNum;                 //断点序号
 	DWORD       dwPageAddr;             //内存分页首地址
 };
 
-typedef BOOL (__cdecl *pfnCmdProcessFun)(StuCommand* cmd);
+typedef BOOL (__cdecl *pfnCmdProcessFun)(CCCommand* cmd);
 
 
 //命令链表中的节点结构体
-struct StuCmdNode
+struct CCCmdNode
 {
 	char            chCmd[20];
 	pfnCmdProcessFun   pFun;
@@ -57,7 +57,7 @@ struct StuCmdNode
 
 
 //断点信息结构体
-struct stuPointInfo
+struct CCPointInfo
 {
 	PointType   ptType;                 //断点类型
 	int         nPtNum;                 //断点序号
@@ -73,13 +73,26 @@ struct stuPointInfo
 };
 
 
+//分页信息结构体
+struct CCPageInfo
+{
+	DWORD       dwPageAddr;             //内存分页首地址
+	DWORD       dwOldProtect;           //分页原有属性
+};
 
+
+//需要恢复（重设）的内存断点结构体
+struct CCResetMemBp
+{
+	DWORD dwAddr;
+	int nID;
+};
 
 
 LPVOID HexStringToHex(char* pHexString, BOOL isShowError);
 
 void __stdcall GetSafeStr(char *p, int n);
-BOOL ChangeStrToCmd(IN char* chUserInputString, OUT StuCommand* pUserCmd);
+BOOL ChangeStrToCmd(IN char* chUserInputString, OUT CCCommand* pUserCmd);
 char* DelFrontSpace(char * pStr);
-pfnCmdProcessFun GetFunFromAryCmd(StuCommand m_UserCmd );
-BOOL ShowHelp(StuCommand* pCmd);
+pfnCmdProcessFun GetFunFromAryCmd(CCCommand m_UserCmd );
+BOOL ShowHelp(CCCommand* pCmd);

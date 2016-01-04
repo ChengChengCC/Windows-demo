@@ -1,9 +1,9 @@
 #include "stdafx.h"
 
-#include "StuCode.h"
+#include "CCCode.h"
 
 
-int StuCode::operator==(const StuCode & c)
+int CCCode::operator==(const CCCode & c)
 {
 	//得到指令长度的较小值
 	int nMinCodeLen = min(m_nCodeLen, c.m_nCodeLen);
@@ -19,9 +19,7 @@ int StuCode::operator==(const StuCode & c)
 }
 
 
-
-
-int StuCode::operator<(const StuCode & c)
+int CCCode::operator<(const CCCode & c)
 {
 	if(c.m_nEip < m_nEip)
 	{
@@ -33,10 +31,7 @@ int StuCode::operator<(const StuCode & c)
 	}
 }
 
-
-
-
-int StuCode::operator>(const StuCode & c)
+int CCCode::operator>(const CCCode & c)
 {
 	if(c.m_nEip > m_nEip)
 	{

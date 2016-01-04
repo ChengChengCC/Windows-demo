@@ -2,20 +2,17 @@
 
 #include "Common.h"
 #include "CHandleException.h"
-extern StuCmdNode g_aryCmd[];
-extern list<StuCommand*> g_UserInputList; 
+extern CCCmdNode g_aryCmd[];
+extern list<CCCommand*> g_UserInputList; 
 
 BOOL CHandleException::WaitForUserInput()
 {
 	printf("COMMAND:");
 	char chUserInputString[41] = {0};
 	GetSafeStr(chUserInputString, 40);
-
-	memset(&m_UserCmd, 0, sizeof(StuCommand));
-
+	memset(&m_UserCmd, 0, sizeof(CCCommand));
 	//用户输入的字符串转换为命令结构体
 	BOOL bRet = ChangeStrToCmd(chUserInputString, &m_UserCmd);
-
 	if ( bRet == FALSE)
 	{
 		return FALSE;
@@ -25,8 +22,8 @@ BOOL CHandleException::WaitForUserInput()
 	pfnCmdProcessFun pFun = GetFunFromAryCmd(m_UserCmd);
 	if (pFun)
 	{
-		StuCommand *pCmd = new StuCommand;
-		memcpy(pCmd, &m_UserCmd, sizeof(StuCommand));
+		CCCommand *pCmd = new CCCommand;
+		memcpy(pCmd, &m_UserCmd, sizeof(CCCommand));
 		g_UserInputList.push_back(pCmd);
 		return (*pFun)(pCmd); //调用命令处理函数
 	}
@@ -38,7 +35,7 @@ BOOL CHandleException::WaitForUserInput()
 }
 
 //查命令链表，找对应的处理函数指针
-pfnCmdProcessFun GetFunFromAryCmd(StuCommand UserCmd )
+pfnCmdProcessFun GetFunFromAryCmd(CCCommand UserCmd )
 {
 	int i = 0;
 	while (g_aryCmd[i].pFun != NULL)
@@ -71,13 +68,13 @@ void __stdcall GetSafeStr(char *p, int n)
 
 
 
-BOOL ChangeStrToCmd(IN char* chUserInputString, OUT StuCommand* pUserCmd)
+BOOL ChangeStrToCmd(IN char* chUserInputString, OUT CCCommand* pUserCmd)
 {
 	char * chStr = DelFrontSpace(chUserInputString);
 	int nLen = strlen(chStr);
 
 	int i = 0;
-	int j = 0;  // 代表的是 stuCommand 结构体中第几个字段
+	int j = 0;  // 代表的是 CCCommand 结构体中第几个字段
 	//     int k = FIELD_LEN;
 	while (chStr[0] != '\0' && chStr[0] != '\r')
 	{
@@ -94,7 +91,6 @@ BOOL ChangeStrToCmd(IN char* chUserInputString, OUT StuCommand* pUserCmd)
 				return FALSE;
 			}
 		}
-
 		memcpy((char*)((int)pUserCmd + FIELD_LEN*j), chStr, i);
 		j++;
 

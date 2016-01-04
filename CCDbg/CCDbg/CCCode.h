@@ -2,7 +2,7 @@
 #include "Common.h"
 
 
-class StuCode
+class CCCode
 {
 public:
 	int     m_nID;                  //指令执行时的下标值
@@ -13,7 +13,7 @@ public:
 	char	m_AsmCode[100];		    //指令内容
 	char    m_chApiName[100];       //如果是CALL指令，且CALL到API，这里记录API名称
 public:
-	StuCode()
+	CCCode()
 	{
 		m_nID = -1;
 		m_nEip = -1;
@@ -22,8 +22,7 @@ public:
 		memset(m_AsmCode, 0, 100);
 		memset(m_chApiName, 0, 100);
 	}
-
-	int operator==(const StuCode & c);
-	int operator>(const StuCode & c);
-	int operator<(const StuCode & c);
+	int operator==(const CCCode & c);
+	int operator>(const CCCode & c);
+	int operator<(const CCCode & c);
 };

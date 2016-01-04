@@ -80,7 +80,7 @@
     <ClInclude Include="Common.h" />
     <ClInclude Include="disasm.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="StuCode.h" />
+    <ClInclude Include="CCCode.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
@@ -88,15 +88,18 @@
     <ClCompile Include="assembl.cpp" />
     <ClCompile Include="Context.cpp" />
     <ClCompile Include="disasm.cpp" />
+    <ClCompile Include="HardPoint.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="CHandleException.cpp" />
     <ClCompile Include="Common.cpp" />
+    <ClCompile Include="MemPoint.cpp" />
+    <ClCompile Include="OrdPoint.cpp" />
     <ClCompile Include="ShowAsm.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="StuCode.cpp" />
+    <ClCompile Include="CCCode.cpp" />
     <ClCompile Include="UserInput.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

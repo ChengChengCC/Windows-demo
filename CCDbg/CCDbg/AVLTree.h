@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "StuCode.h"
+#include "CCCode.h"
 using namespace std;
 
 
