@@ -49,7 +49,7 @@ public:
 	static BOOL ClearHardPoint(CCCommand* pCmd);
 
 	static BOOL HandleException();
-	static BOOL DoAccessException();//处理访问异常部分
+	static BOOL HandleAccessException();//处理访问异常部分
 	static BOOL HandleInt3Exception();//处理INT3异常
 	static BOOL HandleSingleStepException();//处理单步异常
 

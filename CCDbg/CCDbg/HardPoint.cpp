@@ -278,7 +278,7 @@ BOOL CHandleException::ListHardPoint(CCCommand* pCmd)
 	}
 	for (int i = 0; i < 4; i++)
 	{
-		if((m_Context.Dr7 & (int)pow(4, i)) != 0 || 
+		if((m_Context.Dr7 & (int)pow((double)4, i)) != 0 || 
 			(m_isNeedResetHardPoint == TRUE && m_nNeedResetHardPoint == i) )
 		{
 			printf("%d     Hardware breakpoint   ", i+1);
@@ -341,14 +341,14 @@ BOOL CHandleException::ClearHardPoint(CCCommand* pCmd)
 	}
 
 	nID--;
-	if ((m_Context.Dr7 & (int)pow(4, nID)) == 0 && 
+	if ((m_Context.Dr7 & (int)pow((double)4, nID)) == 0 && 
 		(nID != m_nNeedResetHardPoint || m_isNeedResetHardPoint == FALSE))
 	{
 		printf("Can not find the Hardware breakpoint!\r\n");
 		return FALSE;
 	}
 
-	m_Context.Dr7 &= ~(int)pow(4, nID);
+	m_Context.Dr7 &= ~(int)pow((double)4, nID);
 
 	//如果要重设的硬件断点序号 m_nNeedResetHardPoint 等于要删除的硬件断点序号，
 	//则硬件断点不需重设

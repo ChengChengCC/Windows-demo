@@ -130,7 +130,7 @@ BOOL CHandleException::HandleException()
 
 
 
-BOOL CHandleException::DoAccessException()//处理访问异常部分
+BOOL CHandleException::HandleAccessException()//处理访问异常部分  内存断点
 {
 	BOOL                    bRet;
 	DWORD                   dwAccessAddr;       //读写地址
@@ -158,7 +158,7 @@ BOOL CHandleException::DoAccessException()//处理访问异常部分
 		CCPointPage* pPointPage = *it;
 		//如果在“断点-分页表”中查找到
 		//再根据断点表中信息判断是否符合用户所下断点信息
-		if (pPointPage->dwPageAddr == (dwAccessAddr & 0xfffff000))
+		if (pPointPage->dwPageAddr == (dwAccessAddr & 0xfffff000))//判断触发异常的地址在不在断点表中
 		{
 			CCResetMemBp *p = new CCResetMemBp;
 			p->dwAddr = pPointPage->dwPageAddr;
@@ -241,8 +241,8 @@ BOOL CHandleException::DoAccessException()//处理访问异常部分
 BOOL CHandleException::HandleInt3Exception()//处理INT3异常
 {
 	BOOL                    bRet;
-	CCPointInfo            tempPointInfo;
-	CCPointInfo*           pResultPointInfo = NULL;
+	CCPointInfo             tempPointInfo;
+	CCPointInfo*            pResultPointInfo = NULL;
 	char                    CodeBuf[24] = {0};
 	/*
 	过滤初始断点，当新进程的初始线程在自己的上下文中初始化时，作为进程初始化的一个步骤，
@@ -250,7 +250,7 @@ BOOL CHandleException::HandleInt3Exception()//处理INT3异常
 	PEB的BeingDebugged字段），如果是，他会调用DbgBreakPoint()触发一个断点异常，
 	目的是中断到调试器，称为初始断点。
 	*/
-	//先过掉系统的INT3断点 
+	//先过掉系统的INT3断点
 	if (m_IsSystemInt3 == TRUE)
 	{
 		m_IsSystemInt3 = FALSE;
@@ -296,8 +296,6 @@ BOOL CHandleException::HandleInt3Exception()//处理INT3异常
 
 		if (m_pFindPoint->isOnlyOne == TRUE)    //是一次性断点
 		{
-// 			delete m_pFindPoint;
-// 			g_ptList.erase(m_itFind);     //erase ？？？
 			g_ptList.remove(m_pFindPoint);
 			delete m_pFindPoint;
 			m_pFindPoint = nullptr;
@@ -350,8 +348,8 @@ BOOL CHandleException::HandleSingleStepException()//处理单步异常
 	BOOL                    bRet;
 	DWORD                   dwDr6 = 0;
 	DWORD                   dwDr6Low = 0;
-	CCPointInfo            tempPointInfo;
-	CCPointInfo*           pResultPointInfo = NULL;
+	CCPointInfo             tempPointInfo;
+	CCPointInfo*            pResultPointInfo = NULL;
 	char                    CodeBuf[24] = {0};
 	DWORD                   dwOldProtect;
 	DWORD                   dwNoUseProtect;
@@ -378,10 +376,10 @@ BOOL CHandleException::HandleSingleStepException()//处理单步异常
 		}
 	}
 // 
-	//需要重设硬件断点   ？？？
+	//需要重设硬件断点  
 	if (m_isNeedResetHardPoint == TRUE)
 	{
-		m_Context.Dr7 |= (int)pow(4, m_nNeedResetHardPoint);
+		m_Context.Dr7 |= (int)pow((double)4, m_nNeedResetHardPoint);
 		UpdateContextToThread();
 		m_isNeedResetHardPoint = FALSE;
 	}
@@ -401,16 +399,16 @@ BOOL CHandleException::HandleSingleStepException()//处理单步异常
 			switch (m_nNeedResetHardPoint) //取消硬件断点
 			{
 			case 0:
-				m_Context.Dr7 &= 0xfffffffe;  //1110
+				m_Context.Dr7 &= 0xfffffffe;  //1110 取消Dr0
 				break;
 			case 1:
-				m_Context.Dr7 &= 0xfffffffb;
+				m_Context.Dr7 &= 0xfffffffb;  //1011 取消Dr1
 				break;
 			case 2:
-				m_Context.Dr7 &= 0xffffffef;
+				m_Context.Dr7 &= 0xffffffef;  //1110 1111 取消Dr2
 				break;
 			case 3:
-				m_Context.Dr7 &= 0xffffffbf;
+				m_Context.Dr7 &= 0xffffffbf;  //1011 1111 取消Dr3
 				break;
 			default:
 				printf("Error!\r\n");
@@ -478,7 +476,7 @@ BOOL CHandleException::HandleSingleStepException()//处理单步异常
 	}
 
 	//重设内存断点
-//	ResetMemBp();
+	ResetMemBp();
 
 	//是否是单步记录模式  Trace
 	if (m_isStepRecordMode == TRUE)
