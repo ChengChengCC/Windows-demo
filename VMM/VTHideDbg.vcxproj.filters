@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Common.h" />
+    <ClCompile Include="DriverEntry.c">
+      <Filter>DriverEntry</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.c">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook.c">
+      <Filter>Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="Nt.c" />
+    <ClCompile Include="NewSysCall.c">
+      <Filter>Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="Vm.c">
+      <Filter>Vm</Filter>
+    </ClCompile>
+    <ClCompile Include="VT-x.c">
+      <Filter>VT-x</Filter>
+    </ClCompile>
+    <ClCompile Include="ControlArea.c">
+      <Filter>ControlArea</Filter>
+    </ClCompile>
+    <ClCompile Include="CPU.c">
+      <Filter>CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="misc.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="VMInterrupt.c">
+      <Filter>VMInterrupt</Filter>
+    </ClCompile>
+    <ClCompile Include="VmExit.c">
+      <Filter>Vm</Filter>
+    </ClCompile>
+    <ClCompile Include="VmExitHandler.c">
+      <Filter>Vm</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="DriverEntry">
+      <UniqueIdentifier>{8808d5ac-490d-4de3-b835-6213e297459b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{7cab5efe-d0d5-4f66-bed3-99f3477a4979}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hook">
+      <UniqueIdentifier>{0f379216-a29f-49f8-b681-8ca2ee1f76b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vm">
+      <UniqueIdentifier>{b7958337-b42b-4094-8e7f-ba54bffed12a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VT-x">
+      <UniqueIdentifier>{02f751e7-f9be-437b-8039-10181aa2b0c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ControlArea">
+      <UniqueIdentifier>{d571a3c8-16a2-4e42-93eb-9242df44c94a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CPU">
+      <UniqueIdentifier>{30ce7117-cae2-46f6-8b47-8a49fef1aff0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="amd64vm">
+      <UniqueIdentifier>{bb556cf2-96a0-444c-a1ff-41d3db3aec70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="amd64">
+      <UniqueIdentifier>{c74ca40c-66ff-4ff7-9cf4-9819f8aec51c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="misc">
+      <UniqueIdentifier>{1acc3688-b251-4d4b-80a1-516b0c5373fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VMInterrupt">
+      <UniqueIdentifier>{c6605245-6dac-48fe-ba4c-8db6beb1b787}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DriverEntry.h">
+      <Filter>DriverEntry</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Hook.h">
+      <Filter>Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Nt.h" />
+    <ClInclude Include="NewSysCall.h">
+      <Filter>Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="NtType.h">
+      <Filter>Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Vm.h">
+      <Filter>Vm</Filter>
+    </ClInclude>
+    <ClInclude Include="VT-x.h">
+      <Filter>VT-x</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlArea.h">
+      <Filter>ControlArea</Filter>
+    </ClInclude>
+    <ClInclude Include="CPU.h">
+      <Filter>CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="amd64vm.h">
+      <Filter>amd64vm</Filter>
+    </ClInclude>
+    <ClInclude Include="vmx.h" />
+    <ClInclude Include="amd64.h">
+      <Filter>amd64</Filter>
+    </ClInclude>
+    <ClInclude Include="misc.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="VMInterrupt.h">
+      <Filter>VMInterrupt</Filter>
+    </ClInclude>
+    <ClInclude Include="VmExit.h">
+      <Filter>Vm</Filter>
+    </ClInclude>
+    <ClInclude Include="VmExitHandler.h">
+      <Filter>Vm</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="sources" />
+    <None Include="amd64\syscall64.asm" />
+    <None Include="amd64\amd64vm.asm">
+      <Filter>amd64vm</Filter>
+    </None>
+    <None Include="amd64\amd64.asm">
+      <Filter>amd64</Filter>
+    </None>
+  </ItemGroup>
+</Project>

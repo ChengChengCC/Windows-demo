@@ -1,0 +1,27 @@
+TARGETNAME=VTHideDbg
+#TARGETPATH=$(BASEDIR)\lib
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+INCLUDES=.\
+
+SOURCES=DriverEntry.c \
+		Hook.c \
+		Utility.c \
+		Nt.c \
+		NewSysCall.c \
+		Vm.c \
+		VT-x.c \
+		ControlArea.c \
+		CPU.c \
+		VMInterrupt.c\
+		misc.c\
+		VmExit.c\
+		VmExitHandler.c\
+
+
+AMD64_SOURCES = \
+				syscall64.asm \
+				amd64vm.asm \
+				amd64.asm \
+				

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="WinDDK|Win32">
+      <Configuration>WinDDK</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4EE67C57-BE79-4CD7-B3B0-94AECE62DB41}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>"VTHideDbg"</RootNamespace>
+    <ProjectName>VMM</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='WinDDK|Win32'">
+    <TargetExt>.sys</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+    <ExecutablePath>$(WLHBASE)\bin\x86\x86;$(WLHBASE)\bin\x86</ExecutablePath>
+    <IncludePath>$(WLHBASE)\inc\api;$(WLHBASE)\inc\crt;$(WLHBASE)\inc\ddk;$(WLHBASE)\inc</IncludePath>
+    <ReferencePath />
+    <LibraryPath>$(WLHBASE)\lib\win7\i386</LibraryPath>
+    <SourcePath />
+    <ExcludePath />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='WinDDK|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_X86_;DBG=1</PreprocessorDefinitions>
+      <ExceptionHandling>false</ExceptionHandling>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <CallingConvention>StdCall</CallingConvention>
+      <CompileAs>CompileAsC</CompileAs>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ntoskrnl.lib;hal.lib;wdm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Link>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <SubSystem>Native</SubSystem>
+      <Driver>Driver</Driver>
+      <EntryPointSymbol>DriverEntry</EntryPointSymbol>
+      <SetChecksum>true</SetChecksum>
+      <BaseAddress>0x10000</BaseAddress>
+      <RandomizedBaseAddress>
+      </RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ControlArea.c" />
+    <ClCompile Include="CPU.c" />
+    <ClCompile Include="DriverEntry.c" />
+    <ClCompile Include="Common.h" />
+    <ClCompile Include="Hook.c" />
+    <ClCompile Include="misc.c" />
+    <ClCompile Include="NewSysCall.c" />
+    <ClCompile Include="Nt.c" />
+    <ClCompile Include="Utility.c" />
+    <ClCompile Include="Vm.c" />
+    <ClCompile Include="VmExit.c" />
+    <ClCompile Include="VmExitHandler.c" />
+    <ClCompile Include="VMInterrupt.c" />
+    <ClCompile Include="VT-x.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="amd64.h" />
+    <ClInclude Include="amd64vm.h" />
+    <ClInclude Include="ControlArea.h" />
+    <ClInclude Include="CPU.h" />
+    <ClInclude Include="DriverEntry.h" />
+    <ClInclude Include="Hook.h" />
+    <ClInclude Include="misc.h" />
+    <ClInclude Include="NewSysCall.h" />
+    <ClInclude Include="Nt.h" />
+    <ClInclude Include="NtType.h" />
+    <ClInclude Include="Utility.h" />
+    <ClInclude Include="Vm.h" />
+    <ClInclude Include="VmExit.h" />
+    <ClInclude Include="VmExitHandler.h" />
+    <ClInclude Include="VMInterrupt.h" />
+    <ClInclude Include="vmx.h" />
+    <ClInclude Include="VT-x.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="amd64\amd64.asm" />
+    <None Include="amd64\amd64vm.asm" />
+    <None Include="amd64\syscall64.asm" />
+    <None Include="sources" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
