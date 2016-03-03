@@ -4,7 +4,7 @@
 ###配置环境
 * 编译环境：WDK7600
 * 物理机：Windows7 Ultimate Sp1
-* 虚拟机：VMWare + Windows7 Ultimate Sp1 
+* 虚拟机：VMWare + Windows7 Ultimate Sp1
 ###参考书籍
 * 《x86/x64体系探索及编程》
 * 《处理器虚拟化技术》
