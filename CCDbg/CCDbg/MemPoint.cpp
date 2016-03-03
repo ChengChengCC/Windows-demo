@@ -10,6 +10,12 @@ extern list<CCResetMemBp*>  g_ResetMemBp;              //需要恢复的内存断点
 //设置内存断点
 BOOL CHandleException::SetMemPoint(CCCommand* pCmd)
 {
+	/*
+	g_PageList 记录下过内存断点的所有虚拟页信息
+	g_PointPageList 记录所有内存断点所在的虚拟页的基地址与断点编号
+	g_ptList   记录所有断点的信息
+	g_ResetMemBp   记录需要重设内存断点的编号和虚拟页基地址
+	*/
 	LPVOID  lpAddr = HexStringToHex(pCmd->chParam1, TRUE);
 
 	if (lpAddr == 0)

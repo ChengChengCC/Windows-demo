@@ -172,7 +172,7 @@ BOOL CHandleException::HandleAccessException()//处理访问异常部分  内存断点
 				//这些操作只需要执行一次
 				bDoOnce = TRUE;
 				isExceptionFromMemPoint = TRUE;
-				TempResumePageProp(pPointPage->dwPageAddr);
+				TempResumePageProp(pPointPage->dwPageAddr); //暂时恢复页面属性
 				//设置单步，在单步中将断点设回
 				UpdateContextFromThread();
 				m_Context.EFlags |= TF;
@@ -356,9 +356,8 @@ BOOL CHandleException::HandleSingleStepException()//处理单步异常
 
 	UpdateContextFromThread();
 
-	//需要重设CC断点，就是用户设置的CC断点被触发以后,设置了单步异常
-	//也是接下来为了避免在同一地址断下两次，如果触发单步异常的地址同时也存在CC断点，
-	//就先暂时去除CC断点，当该地址指令执行过后再恢复内存中的0xcc
+	//需要重设CC断点，就是用户设置的CC断点被触发以后,恢复了原来的内存的内容，设置了单步异常
+	//这里如果是CC断点设置的单步，那么就需要将0xcc重新写回目标地址
 	if (m_isNeedResetPoint == TRUE)
 	{
 		m_isNeedResetPoint = FALSE;
