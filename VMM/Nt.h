@@ -1,15 +1,5 @@
 #pragma once
 
-// #ifdef _WIN64
-// #define CHECK_SIZE(str, size64, size32) static_assert(sizeof(str) == (size64), "Invalid " #str " size")
-// #define CHECK_SIZE_SAME(str, size) CHECK_SIZE(str, size, size)
-// #else
-// #define CHECK_SIZE(str, size64, size32) static_assert(sizeof(str) == (size32), "Invalid " #str " size")
-// #define CHECK_SIZE_SAME(str, size) CHECK_SIZE(str, size, size)
-// #endif
-
-
-
 #include "Common.h"
 
 typedef enum _SYSTEM_INFORMATION_CLASS

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DriverEntry.c" />
+    <ClCompile Include="Common.h" />
+    <ClCompile Include="ControlArea.c">
+      <Filter>ControlArea</Filter>
+    </ClCompile>
+    <ClCompile Include="CPU.c">
+      <Filter>CPU</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook.c">
+      <Filter>Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="misc.c">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="NewSysCall.c">
+      <Filter>NewSysCall</Filter>
+    </ClCompile>
+    <ClCompile Include="Nt.c">
+      <Filter>Nt</Filter>
+    </ClCompile>
+    <ClCompile Include="VmExit.c">
+      <Filter>VmExit</Filter>
+    </ClCompile>
+    <ClCompile Include="VmExitHandler.c">
+      <Filter>VmExit</Filter>
+    </ClCompile>
+    <ClCompile Include="Vm.c">
+      <Filter>Vm</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility.c">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="VMInterrupt.c">
+      <Filter>Interrupt</Filter>
+    </ClCompile>
+    <ClCompile Include="VT-x.c">
+      <Filter>VT-x</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DriverEntry.h" />
+    <ClInclude Include="vmx.h" />
+    <ClInclude Include="amd64.h">
+      <Filter>amd64</Filter>
+    </ClInclude>
+    <ClInclude Include="amd64vm.h">
+      <Filter>amd64vm</Filter>
+    </ClInclude>
+    <ClInclude Include="ControlArea.h">
+      <Filter>ControlArea</Filter>
+    </ClInclude>
+    <ClInclude Include="CPU.h">
+      <Filter>CPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Hook.h">
+      <Filter>Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="misc.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="NewSysCall.h">
+      <Filter>NewSysCall</Filter>
+    </ClInclude>
+    <ClInclude Include="Nt.h">
+      <Filter>Nt</Filter>
+    </ClInclude>
+    <ClInclude Include="NtType.h">
+      <Filter>Nt</Filter>
+    </ClInclude>
+    <ClInclude Include="VmExit.h">
+      <Filter>VmExit</Filter>
+    </ClInclude>
+    <ClInclude Include="VmExitHandler.h">
+      <Filter>VmExit</Filter>
+    </ClInclude>
+    <ClInclude Include="Vm.h">
+      <Filter>Vm</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="VMInterrupt.h">
+      <Filter>Interrupt</Filter>
+    </ClInclude>
+    <ClInclude Include="VT-x.h">
+      <Filter>VT-x</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="amd64\syscall64.asm" />
+    <None Include="sources" />
+    <None Include="amd64\amd64.asm">
+      <Filter>amd64</Filter>
+    </None>
+    <None Include="amd64\amd64vm.asm">
+      <Filter>amd64vm</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="amd64">
+      <UniqueIdentifier>{f259bbf7-fb7f-49e8-b7e1-8c0933f367e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="amd64vm">
+      <UniqueIdentifier>{13ac3df3-d066-477f-8933-5c113b3f05b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ControlArea">
+      <UniqueIdentifier>{20c80876-8b24-4a65-b096-24053f5ab83b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CPU">
+      <UniqueIdentifier>{ae65c55f-8723-4faf-aee5-49fd952710ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Hook">
+      <UniqueIdentifier>{75af366c-3ea9-499a-99ec-4d6875f747a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="misc">
+      <UniqueIdentifier>{a6e520e7-ba5b-4297-82c1-a7e23e10f6c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NewSysCall">
+      <UniqueIdentifier>{b4d4255d-6fb5-49c8-a8bc-f1f2745925f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nt">
+      <UniqueIdentifier>{e8084750-3b7a-4099-9e92-92e42a392bc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VmExit">
+      <UniqueIdentifier>{55542135-034a-421f-9feb-c5d77a64ccc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vm">
+      <UniqueIdentifier>{3c04599e-6e38-4678-b546-a1434f8a418b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{14304553-b5b3-49ef-be72-87ad19347e01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interrupt">
+      <UniqueIdentifier>{fdd89747-9d13-47b7-9f9b-57fa2538c2cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VT-x">
+      <UniqueIdentifier>{77ac4318-23e2-47e3-b3af-856a7e766675}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

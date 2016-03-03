@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VTHideDbg", "VTHideDbg.vcxproj", "{4EE67C57-BE79-4CD7-B3B0-94AECE62DB41}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VMM", "VMM.vcxproj", "{4EE67C57-BE79-4CD7-B3B0-94AECE62DB41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
